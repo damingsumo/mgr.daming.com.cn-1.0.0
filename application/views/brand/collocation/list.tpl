@@ -3,101 +3,83 @@
 		   
 		    <div class="detial ">
 	 		    <ul class="top">
-					<li><a href=""><img src="images/xinjian.png">新建</a></li>
+					<li><a href="/collocation/goadd?gid={$goods.gid}"><img src="/assets/images/xinjian.png">新建</a></li>
 					<li><a href="">搭配管理</a></li>
 				</ul>
-				<form>
 				<div class="color_add">
 						<div> 
 							<span>品牌：</span>
 						</div>
-						 <span>优衣库</span>
+						 <span>{$goods.brand_name}</span>
 	            </div>
 	            <div class="collocation"> 
+	            {foreach $collocations as $collocation}
 	            <div class="color_add  ">
 						<div> 
 							<span>搭配1ID：</span>
 						</div>
 						<div> 
-							<span>2013060122</span>
+							<span>{$goods.brand_name}</span>
 						</div>
 						<div> 
-							<span>名称：优衣库</span>
+							<span>名称：{$goods.goods_name}</span>
 						</div>
 						<div> 
-							<span>类别：套装</span>
-						</div>
+							<span>类别：{if $goods['genre']['category'] == 1}上装{else if $goods['genre']['category'] == 2}裤子{else if $goods['genre']['category'] == 3}套装{else if $goods['genre']['category'] == 4} 裙装{/if} </span>
 						<div> 
-							<span>分类：长套</span>
+							<span>分类：{$goods['genre']['name']}</span>
 						</div>
 	            </div>
+	            {if isset($collocation['firstinfo'])}
 	            <div class="color_add  ">
 						<div> 
 							<span>搭配2ID：</span>
 						</div>
 						<div> 
-							<span>2013060122</span>
+							<span>{$collocation['firstinfo']['gid']}</span>
 						</div>
 						<div> 
-							<span>名称：优衣库</span>
+							<span>名称：{$collocation['firstinfo']['goods_name']}</span>
 						</div>
 						<div> 
-							<span>类别：套装</span>
+							<span>类别：{if $collocation['firstinfo']['genre']['category'] == 1}上装{else if $collocation['firstinfo']['genre']['category'] == 2}裤子{else if $collocation['firstinfo']['genre']['category'] == 3}套装{else if $collocation['firstinfo']['genre']['category'] == 4} 裙装{/if} </span>
 						</div>
 						<div> 
-							<span>分类：长套</span>
+							<span>分类：{$collocation['firstinfo']['genre']['name']}</span>
 						</div>
 	            </div>
+	            {/if}
+	            {if isset($collocation['secondinfo'])}
 	            <div class="color_add  ">
 						<div> 
 							<span>搭配3ID：</span>
 						</div>
 						<div> 
-							<span>2013060122</span>
+							<span>{$collocation['secondinfo']['gid']}</span>
 						</div>
 						<div> 
-							<span>名称：优衣库</span>
+							<span>名称：{$collocation['secondinfo']['goods_name']}</span>
 						</div>
 						<div> 
-							<span>类别：套装</span>
+							<span>类别：{if $collocation['secondinfo']['genre']['category'] == 1}上装{else if $collocation['secondinfo']['genre']['category'] == 2}裤子{else if $collocation['secondinfo']['genre']['category'] == 3}套装{else if $collocation['secondinfo']['genre']['category'] == 4} 裙装{/if}</span>
 						</div>
 						<div> 
-							<span>分类：长套</span>
+							<span>分类：{$collocation['secondinfo']['genre']['name']}</span>
 						</div>
 	            </div>
-	            <div class="color_add  ">
-						<div> 
-							<span>鞋子ID&nbsp&nbsp：</span>
-						</div>
-						<div> 
-							<span>2013060122</span>
-						</div>
-						<div> 
-							<span>名称：优衣库</span>
-						</div> 
-						<div> 
-							<span>类别：套装</span>
-						</div>
-						<div> 
-							<span>分类：长套</span>
-						</div>
-
-	            </div>
+	            {/if}
 	        </div>
 	             <div class="haircolor_img collocation_img ">
 	                    <em>*</em>
 					    <span>搭配图片：</span>
 					    <div class="increase increase2">
-					    	<img src=" ">
+					    	<img src="{$collocation.synthesis_url}">
 					    </div>
 	                   
 						
 						 
 	                </div>
-	            <div class="sub sub2">
-		    		<input type="submit" value="编辑">
-		    	</div>
-				</form>
+	            {/foreach}
 		     </div>
 	  </div>
 </body>

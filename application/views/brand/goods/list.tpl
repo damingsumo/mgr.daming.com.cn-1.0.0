@@ -76,7 +76,7 @@
 				 			{$goods.price/100}元
 				 			</td>
 				 			<td>
-				 			<a href="/collocation/collocationList?gid={$goods.gid}">{$collocationTotal}</a>
+				 			<a href="/collocation/collocationList?gid={$goods.gid}">{$goods.collocationTotal}</a>
 				 			</td>
 				 		</tr>
 				 		{/foreach}

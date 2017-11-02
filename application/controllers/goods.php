@@ -45,9 +45,9 @@ class Goods extends MY_controller {
         }
         foreach ($goodss as &$goods) {
             $goods['genre'] = $this->genre_model->row('*', $goods['genre_id']);
+            $goods['collocationTotal'] = $this->collocation_model->getCollocationCountByParams(array('gid'=>$goods['gid']));
         }
         
-        $collocationTotal = $this->collocation_model->getCollocationCountByParams($params);
         
         $params['total'] = $total;
         $params['goodss'] = $goodss;
@@ -55,7 +55,6 @@ class Goods extends MY_controller {
         $params['pageSize'] = $pageSize;
         $params['_SESSION'] =$_SESSION;
         $params['pager'] = new pager($total, $page,$pageSize);
-        $params['collocationTotal'] = $collocationTotal;
         return $this->display('brand/goods/list', $params);
     }
     

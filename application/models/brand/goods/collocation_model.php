@@ -14,10 +14,6 @@ class Collocation_model extends MY_Model{
      */
     public function getCollocationCountByParams($params) {
         $sql = 'select count(*) as total from ' . $this->tableName . ' where 1 ';
-        if(isset($params['gid'])) {
-            $sql .= ' and gid=' . $params['gid'];
-            unset($params['gid']);
-        }
         $binds = array();
         foreach($params as $k => $v) {
             $binds[':' . $k]= $v;
@@ -37,10 +33,6 @@ class Collocation_model extends MY_Model{
      */
     public function getCollocationsByParams($params, $page = 1, $pageSize = -1) {
         $sql = 'select * from ' . $this->tableName . ' where 1 ';
-        if(isset($params['gid'])) {
-            $sql .= ' and gid=' . $params['gid'] . 'or first_collocation_id = ' .$params['gid'] . 'or second_collocation_id = '.$params['gid'];
-            unset($params['gid']);
-        }
         $binds = array();
         foreach($params as $k => $v) {
             $binds[':' . $k]= $v;
