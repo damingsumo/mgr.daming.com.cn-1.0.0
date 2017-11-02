@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-02 09:48:51
+/* Smarty version 3.1.31, created on 2017-11-02 18:15:00
   from "H:\daima\mgr.daming.com.cn-1.0.0\application\views\brand\goods\list.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59fa798324bce8_79064616',
+  'unifunc' => 'content_59faf024715230_76191300',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd37e737dd80d6c4f3a9f9ec62a5d511067bb5cd2' => 
     array (
       0 => 'H:\\daima\\mgr.daming.com.cn-1.0.0\\application\\views\\brand\\goods\\list.tpl',
-      1 => 1509585907,
+      1 => 1509617587,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/foot.tpl' => 1,
   ),
 ),false)) {
-function content_59fa798324bce8_79064616 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59faf024715230_76191300 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>'用户列表'), 0, false);
 ?>
 	
@@ -79,6 +79,9 @@ echo $_smarty_tpl->tpl_vars['value']->value;
 				 			<td>
 				 				价格
 				 			</td>
+				 			<td>
+				 				搭配数量
+				 			</td>
 				 		</tr>
 				 		<?php if (!empty($_smarty_tpl->tpl_vars['goodss']->value)) {?>
 				 		<?php
@@ -117,6 +120,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['goods']->value) {
 				 			<td>
 				 			<?php echo $_smarty_tpl->tpl_vars['goods']->value['price']/100;?>
 元
+				 			</td>
+				 			<td>
+				 			<a href="/collocation/collocationList?gid=<?php echo $_smarty_tpl->tpl_vars['goods']->value['gid'];?>
+"><?php echo $_smarty_tpl->tpl_vars['goods']->value['collocationTotal'];?>
+</a>
 				 			</td>
 				 		</tr>
 				 		<?php

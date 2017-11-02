@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-02 09:40:34
+/* Smarty version 3.1.31, created on 2017-11-02 16:59:42
   from "H:\daima\mgr.daming.com.cn-1.0.0\application\views\brand\list.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59fa77927c1629_29539456',
+  'unifunc' => 'content_59fade7ec56996_12483655',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd5f550b719709c7018303bb3dec490246d649fb4' => 
     array (
       0 => 'H:\\daima\\mgr.daming.com.cn-1.0.0\\application\\views\\brand\\list.tpl',
-      1 => 1509585907,
+      1 => 1509613173,
       2 => 'file',
     ),
   ),
@@ -23,7 +23,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/foot.tpl' => 1,
   ),
 ),false)) {
-function content_59fa77927c1629_29539456 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59fade7ec56996_12483655 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>'形象列表'), 0, false);
 ?>
 	
@@ -88,7 +88,7 @@ foreach ($_from as $_smarty_tpl->tpl_vars['brand']->value) {
 </a>
 				 			</td>
 				 			<td>
-				 				<?php if ($_smarty_tpl->tpl_vars['brand']->value['region'] == 1) {?> 欧美 <?php } elseif ($_smarty_tpl->tpl_vars['brand']->value['status'] == 2) {?> 中国 <?php } else { ?> 日韩<?php }?>
+				 				<?php if ($_smarty_tpl->tpl_vars['brand']->value['region'] == 1) {?> 欧美 <?php } elseif ($_smarty_tpl->tpl_vars['brand']->value['region'] == 2) {?> 中国 <?php } else { ?> 日韩<?php }?>
 				 			</td>
 				 			<td>
 				 			<a href="/goods/goodsList?brand_id=<?php echo $_smarty_tpl->tpl_vars['brand']->value['brand_id'];?>
