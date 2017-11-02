@@ -86,9 +86,9 @@ $db['default'] = array(
     
     
     'dsn' => '',
-    'hostname' => 'mysql:dbname=test_dress;host=192.168.2.22',
+    'hostname' => 'mysql:dbname=test_dress;host=localhost',
     'username' => 'root',
-    'password' => 'root',
+    'password' => '',
     'database' => 'test_dress',
     'dbdriver' => 'pdo',
     'dbprefix' => '',
