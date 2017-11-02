@@ -52,7 +52,7 @@ class Brand extends MY_controller {
         }
         $region = isset($_POST['region']) ? $_POST['region'] : 0;
         if($region == 0) {
-            return $this->error('请输入品牌名');
+            return $this->error('请输入品牌地区');
         }
         
         $data = $this->sendPicture(array('file_name'=>date('Y-m-d-H-i-s'), 'name'=>'picture_url', 'upload_path'=>'./imgs/brand/'));

@@ -8,6 +8,7 @@ class Goods extends MY_controller {
         $this->load->model('brand_model');
         $this->load->model('brand/goods/size_model');
         $this->load->model('brand/goods/model_model');
+        $this->load->model('brand/goods/collocation_model');
         $this->load->model('genre_model');
         $this->load->model('brand/relevance_model');
         $this->load->model('brand/goods_model');
@@ -45,12 +46,16 @@ class Goods extends MY_controller {
         foreach ($goodss as &$goods) {
             $goods['genre'] = $this->genre_model->row('*', $goods['genre_id']);
         }
+        
+        $collocationTotal = $this->collocation_model->getCollocationCountByParams($params);
+        
         $params['total'] = $total;
         $params['goodss'] = $goodss;
         $params['page'] = $page;
         $params['pageSize'] = $pageSize;
         $params['_SESSION'] =$_SESSION;
         $params['pager'] = new pager($total, $page,$pageSize);
+        $params['collocationTotal'] = $collocationTotal;
         return $this->display('brand/goods/list', $params);
     }
     

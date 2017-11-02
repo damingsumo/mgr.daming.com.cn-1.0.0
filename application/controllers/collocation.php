@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Goods extends MY_controller {
+class Collocation extends MY_controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('brand/goods/collocation_model');
@@ -19,6 +19,8 @@ class Goods extends MY_controller {
     
     public function add() {
         $goodsId = isset($_GET['gid']) ? $_GET['gid'] : 0;
+        $firstCollocationId = isset($_GET['first_collocation_id']) ? $_GET['first_collocation_id'] : 0;
+        $secondCollocationId = isset($_GET['second_collocation_id']) ? $_GET['second_collocation_id'] : 0;
         if($goodsId <= 0) {
             return $this->error('商品ID错误');
         }
@@ -32,7 +34,7 @@ class Goods extends MY_controller {
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
         $params['first_collocation_id'] = isset($_POST['first_collocation_id']) ? $_POST['first_collocation_id'] : 0;
         $params['second_collocation_id'] = isset($_POST['second_collocation_id']) ? $_POST['second_collocation_id'] : 0;
-        $params['picture_url'] = '/imgs/collocation/'.$data['file_name'];
+        $params['picture_url'] = 'http://dev.mgr.daming.com.cn/imgs/collocation/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');
         $collocationId = $this->collocation_model->add($params);
@@ -58,15 +60,23 @@ class Goods extends MY_controller {
         }
         foreach ($collocations as &$collocation) {
             $collocation['goodsinfo'] = $this->goods_model->row('*', $goodsId);
-            $collocation['firstinfo'] = $this->goods_model->row('*', $collocation['gid']);
-            $collocation['secondinfo'] = $this->goods_model->row('*', $collocation['gid']);
-            $collocation['shoesinfo'] = $this->shoes_model->row('*', $collocation['shoes_id']);
+            if($collocation['first_collocation_id'] != '') {
+                $collocation['firstinfo'] = $this->goods_model->row('*', $collocation['first_collocation_id']);
+            }
+            if($collocation['second_collocation_id'] != '') {
+                $collocation['secondinfo'] = $this->goods_model->row('*', $collocation['second_collocation_id']);
+            }
+            if($collocation['shoes_id'] != '') {
+                $collocation['shoesinfo'] = $this->shoes_model->row('*', $collocation['shoes_id']);
+            }
         }
         $params['total'] = $total;
+        $params['_SESSION'] =$_SESSION;
         $params['collocations'] = $collocations;
         $params['page'] = $page;
         $params['pageSize'] = $pageSize;
         $params['pager'] = new pager($total, $page,$pageSize);
+        print_r($params);exit;
         return $this->display('brand/collocation/list', $params);
     }
     

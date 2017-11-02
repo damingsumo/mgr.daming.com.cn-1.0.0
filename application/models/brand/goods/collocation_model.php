@@ -15,7 +15,7 @@ class Collocation_model extends MY_Model{
     public function getCollocationCountByParams($params) {
         $sql = 'select count(*) as total from ' . $this->tableName . ' where 1 ';
         if(isset($params['gid'])) {
-            $sql .= ' and gid=' . $params['gid'] . 'or first_collocation_id = ' .$params['gid'] . 'or second_collocation_id = '.$params['gid'];
+            $sql .= ' and gid=' . $params['gid'];
             unset($params['gid']);
         }
         $binds = array();

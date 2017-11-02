@@ -48,7 +48,7 @@
 				 				<a href="/brand/detail?brand_id={$brand.brand_id}">{$brand.name}</a>
 				 			</td>
 				 			<td>
-				 				{if $brand.region ==1} 欧美 {elseif $brand.status ==2} 中国 {else} 日韩{/if}
+				 				{if $brand.region ==1} 欧美 {elseif $brand.region ==2} 中国 {else} 日韩{/if}
 				 			</td>
 				 			<td>
 				 			<a href="/goods/goodsList?brand_id={$brand.brand_id}">{$brand.goodsTotal}</a>

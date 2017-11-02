@@ -44,6 +44,9 @@
 				 			<td>
 				 				价格
 				 			</td>
+				 			<td>
+				 				搭配数量
+				 			</td>
 				 		</tr>
 				 		{if !empty($goodss)}
 				 		{foreach $goodss as $goods}
@@ -71,6 +74,9 @@
 				 			</td>
 				 			<td>
 				 			{$goods.price/100}元
+				 			</td>
+				 			<td>
+				 			<a href="/collocation/collocationList?gid={$goods.gid}">{$collocationTotal}</a>
 				 			</td>
 				 		</tr>
 				 		{/foreach}
