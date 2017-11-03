@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-03 08:55:48
+/* Smarty version 3.1.31, created on 2017-11-03 10:08:02
   from "H:\daima\mgr.daming.com.cn-1.0.0\application\views\brand\collocation\add.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59fbbe9433ab06_98276708',
+  'unifunc' => 'content_59fbcf82f30804_87103978',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1cdc0c9fb6218c55842d72473f2ed59b2eafae37' => 
     array (
       0 => 'H:\\daima\\mgr.daming.com.cn-1.0.0\\application\\views\\brand\\collocation\\add.tpl',
-      1 => 1509670545,
+      1 => 1509673595,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/menu.tpl' => 1,
   ),
 ),false)) {
-function content_59fbbe9433ab06_98276708 (Smarty_Internal_Template $_smarty_tpl) {
+function content_59fbcf82f30804_87103978 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>'搭配新增'), 0, false);
 ?>
 	
