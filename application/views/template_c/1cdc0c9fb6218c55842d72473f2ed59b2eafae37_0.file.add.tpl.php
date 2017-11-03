@@ -1,5 +1,34 @@
-{include file="common/head.tpl" pageTitle='搭配新增'}	
-{include file="common/menu.tpl" type='brand'}
+<?php
+/* Smarty version 3.1.31, created on 2017-11-03 08:55:48
+  from "H:\daima\mgr.daming.com.cn-1.0.0\application\views\brand\collocation\add.tpl" */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.31',
+  'unifunc' => 'content_59fbbe9433ab06_98276708',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '1cdc0c9fb6218c55842d72473f2ed59b2eafae37' => 
+    array (
+      0 => 'H:\\daima\\mgr.daming.com.cn-1.0.0\\application\\views\\brand\\collocation\\add.tpl',
+      1 => 1509670545,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:common/head.tpl' => 1,
+    'file:common/menu.tpl' => 1,
+  ),
+),false)) {
+function content_59fbbe9433ab06_98276708 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>'搭配新增'), 0, false);
+?>
+	
+<?php $_smarty_tpl->_subTemplateRender("file:common/menu.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('type'=>'brand'), 0, false);
+?>
+
 	          <div class="top_header">
 			     <span>搭配新增 </span>
 	        </div>
@@ -70,4 +99,5 @@
 	       </div>
 	 </div>
 </body>
-</html>
+</html><?php }
+}
