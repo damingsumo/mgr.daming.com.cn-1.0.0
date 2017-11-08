@@ -109,7 +109,7 @@ $(function(){
 			    html1 += '</div>'  
 	//增加		     	 
      $(".plus").click(function(){
-		$(".size_form").append(html1);	
+		$(".goods_minus").append(html1);	
 	});
      // 删除
        $(document).on("click",".remove",function(){
