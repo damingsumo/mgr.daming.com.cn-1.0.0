@@ -67,6 +67,10 @@ class Goods extends MY_controller {
         $styleNumber = isset($_POST['style_number']) ? $_POST['style_number'] : '';
         $price = isset($_POST['price']) ? $_POST['price'] : 0;
         $oldPrice = isset($_POST['old_price']) ? $_POST['old_price'] : 0;
+        $formatFit = isset($_POST['format_fit']) ? $_POST['format_fit']: 0;
+        $formatElastic = isset($_POST['format_elastic']) ? $_POST['format_elastic']: 0;
+        $sizeComparison = isset($_POST['size_comparison']) ? $_POST['size_comparison']: 0;
+        
         $sizes = isset($_POST['size']) ? $_POST['size'] : array();
         $kummerbund = isset($_POST['kummerbund']) ? $_POST['kummerbund'] : array();
         $bust = isset($_POST['bust']) ? $_POST['bust'] : array();
@@ -144,6 +148,10 @@ class Goods extends MY_controller {
         $params['material'] = isset($_POST['material']) ? $_POST['material'] : '';
         $params['price'] = $price*100;
         $params['old_price'] = $oldPrice*100;
+        $params['format_fit'] = $formatFit;
+        $params['format_elastic'] = $formatElastic;
+        $params['size_comparison'] = $sizeComparison;
+        
         $params['reduce_money'] = $oldPrice*100 - $oldPrice*100;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
         $params['sales'] = isset($_POST['sales']) ? $_POST['sales'] : 0;

@@ -5,7 +5,7 @@
 	        </div>
 			<div class="detial detial1">
 				 
-				<form>
+				<form id="brandForm" action="" method="post"  onsubmit="return check()" enctype="multipart/form-data"> 
 				  <div class="match">
 				  	<ul> 
 				  	   <li>
@@ -29,39 +29,39 @@
 				 <div class="haircolor_img">
 	                    <em>*</em>
 					    <span>搭配图片：</span>
-	                    <input type="file" id="file_input">
+	                    <input type="file" id="file_input" name="picture_url">
 						<div class="increase none">
 							<img src=" ">
 						</div>
 						 
 	                </div>
-	                <div class="color_add" style="width:33%;">
+	                <div class="color_add" style="width:33%;" >
 						<div>
 							<em>*</em>
 							<span>横坐标：</span>
 						</div>
-						<input type="text">
+						<input type="text" name="abscissa">
 	                </div>
 	                <div class="color_add" style="width:33%;">
 						<div>
 							<em>*</em>
 							<span>纵坐标：</span>
 						</div>
-						<input type="text">
+						<input type="text" name="ordinate">
 	                </div>
 	                <div class="color_add" style="width:33%;">
 						<div>
 							<em>*</em>
 							<span>图片长：</span>
 						</div>
-						<input type="text">
+						<input type="text" name="length">
 	                </div>
 	                <div class="color_add" style="width:33%;">
 						<div>
 							<em>*</em>
 							<span>图片宽：</span>
 						</div>
-						<input type="text">
+						<input type="text" name="width">
 	                </div>
 				 <div class="sub ">
 		    		<input type="submit" value="保存">
