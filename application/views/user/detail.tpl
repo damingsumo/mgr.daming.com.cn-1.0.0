@@ -11,16 +11,16 @@
 							基本信息
 						</li>
 						<li>
-							<span>身高：{$user.figure['height']}cm</span>
-							<span>体重：{$user.figure['weight']}kg</span>
-							<span>年龄：{$user.figure['age']}</span>
+							<span>身高：{$user.hw['height']}cm</span>
+							<span>体重：{$user.hw['weight']}kg</span>
+							<span>年龄：{$user.hw['age']}</span>
 						</li>
 						<li>
 							胸罩尺码
 						</li>
 						<li>
-							<span>下胸围：{$user.figure['chest_circumference']}</span>
-							<span>罩杯：{$user.figure['cup_size']}</span>
+							<span>下胸围：{if $user.hw['chest_circumference_type'] ==1}{$user.hw['chest_circumference']}{else}{$user.hw['europe_chest_circumference']}{/if}</span>
+							<span>罩杯：{$user.hw['cup_size']}</span>
 						</li>
 						<li>
 							身材特征
@@ -408,7 +408,7 @@
 					<span> </span>
 				</div>
 	  <div class="sub sub3">
-				<button onclick="window.location.href='/shoes/shoesList'">返回</button>
+				<button onclick="window.location.href='/user/userList'">返回</button>
 	       </div>
 		     </div>
 	  </div>

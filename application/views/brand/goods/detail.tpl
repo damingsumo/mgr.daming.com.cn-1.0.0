@@ -2,6 +2,7 @@
 {include file="common/menu.tpl" type='brand'} 	
 		    <div class="top_header">
 			     <span>商品信息</span>
+			     <a href="/goods/goodsModelAdd"><span style="margin-left:0;padding-left:7px;">模特身材数据</span></a>
 	        </div>
 		     <form>
 		        <div class="news ">
@@ -37,7 +38,7 @@
 					    <span>商品图片：</span>
 						
 						<div class="increase">
-							<img src="{$goods.picture_url}">
+							<img src="{$goods.show_url}">
 						</div>
 						 
 	                </div>

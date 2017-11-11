@@ -173,7 +173,7 @@ class Brand extends MY_controller {
     
     
     public function brandSizeAdd() {
-        $brandId = isset($_REQUEST['brand_id']) ? $_REQUEST['brand_id'] : 8;
+        $brandId = isset($_REQUEST['brand_id']) ? $_REQUEST['brand_id'] : 0;
         if($brandId <= 0) {
             return $this->error('品牌ID错误');
         }
@@ -183,50 +183,71 @@ class Brand extends MY_controller {
             $params = array();
             $params['brandSizes'] = $brandSizes;
             $params['_SESSION'] =$_SESSION;
+            $params['brandId'] = $brandId;
             return $this->display('brand/size', $params);
         }
         $height = isset($_POST['height']) ? $_POST['height'] : array();
         $weight = isset($_POST['weight']) ? $_POST['weight'] : array();
         $size = isset($_POST['size']) ? $_POST['size'] : array();
-        $startBust = isset($_POST['start_bust']) ? $_POST['start_bust'] : array();
-        $endBust = isset($_POST['end_bust']) ? $_POST['end_bust'] : array();
-        $startKummerbund = isset($_POST['start_kummerbund']) ? $_POST['start_kummerbund'] : array();
-        $endKummerbund = isset($_POST['end_kummerbund']) ? $_POST['end_kummerbund'] : array();
         $startHeight = isset($_POST['start_height']) ? $_POST['start_height'] : array();
         $endHeight = isset($_POST['end_height']) ? $_POST['end_height'] : array();
         $startWeight = isset($_POST['start_weight']) ? $_POST['start_weight'] : array();
         $endWeight = isset($_POST['end_weight']) ? $_POST['end_weight'] : array();
-        $startSWidth = isset($_POST['start_s_width']) ? $_POST['start_s_width'] : array();
-        $endSWidth = isset($_POST['end_s_width']) ? $_POST['end_s_width'] : array();
+        $startKummerbund = isset($_POST['start_kummerbund']) ? $_POST['start_kummerbund'] : array();
+        $endKummerbund = isset($_POST['end_kummerbund']) ? $_POST['end_kummerbund'] : array();
+        $startHipline= isset($_POST['start_hipline']) ? $_POST['start_hipline'] : array();
+        $endHipline = isset($_POST['end_hipline']) ? $_POST['end_hipline'] : array();
+        $startOutseam= isset($_POST['start_outseam']) ? $_POST['start_outseam'] : array();
+        $endOutseam = isset($_POST['end_outseam']) ? $_POST['end_outseam'] : array();
+        $startThighGirth= isset($_POST['start_thigh_girth']) ? $_POST['start_thigh_girth'] : array();
+        $endThighGirth = isset($_POST['end_thigh_girth']) ? $_POST['end_thigh_girth'] : array();
+        $startKneeCircumference= isset($_POST['start_knee_circumference']) ? $_POST['start_knee_circumference'] : array();
+        $endKneeCircumference = isset($_POST['end_knee_circumference']) ? $_POST['end_knee_circumference'] : array();
+        $startBust = isset($_POST['start_bust']) ? $_POST['start_bust'] : array();
+        $endBust = isset($_POST['end_bust']) ? $_POST['end_bust'] : array();
         $startLength = isset($_POST['start_length']) ? $_POST['start_length'] : array();
         $endLength = isset($_POST['end_length']) ? $_POST['end_length'] : array();
+        $startSWidth = isset($_POST['start_s_width']) ? $_POST['start_s_width'] : array();
+        $endSWidth = isset($_POST['end_s_width']) ? $_POST['end_s_width'] : array();
+        $startSleeveWidth = isset($_POST['start_sleeve_width']) ? $_POST['start_sleeve_width'] : array();
+        $endSleeveWidth = isset($_POST['end_sleeve_width']) ? $_POST['end_sleeve_width'] : array();
         $res = $this->size_model->delete(array('brand_id'=>$brandId,'size_type'=>1));
         if($res === false) {
             return $this->error('删除品牌对照表失败');
         }
         
         foreach($height as $k=>$val) {
-            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]='' ) {
+            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]=='' ) {
                 continue;
             }
             $data = array();
             $data['brand_id'] = $brandId;
             $data['size_type'] = isset($_POST['size_type']) ? $_POST['size_type'] : 1;
             $data['height'] = $val;
-            $data['weight'] = $weight[$k];
-            $data['size'] = $size[$k];
-            $data['start_bust'] = $startBust[$k];
-            $data['end_bust'] = $endBust[$k];
-            $data['start_kummerbund'] = $startKummerbund[$k];
-            $data['end_kummerbund'] = $endKummerbund[$k];
-            $data['start_height'] = $startHeight[$k];
-            $data['end_height'] = $endHeight[$k];
-            $data['start_weight'] = $startWeight[$k];
-            $data['end_weight'] = $endWeight[$k];
-            $data['start_s_width'] = $startSWidth[$k];
-            $data['end_s_width'] = $endSWidth[$k];
-            $data['start_length'] = $startLength[$k];
-            $data['end_length'] = $endLength[$k];
+            $data['weight'] = isset($weight[$k]) ? $weight[$k] : 0;
+            $data['size'] = isset($size[$k]) ? $size[$k] : 0;$size[$k];
+            $data['start_height'] = isset($startHeight[$k]) ? $startHeight[$k] : 0;
+            $data['end_height'] = isset($endHeight[$k]) ? $endHeight[$k] : 0;
+            $data['start_weight'] = isset($startWeight[$k]) ? $startWeight[$k] : 0;
+            $data['end_weight'] = isset($endWeight[$k]) ? $endWeight[$k] : 0;
+            $data['start_kummerbund'] = isset($startKummerbund[$k]) ? $startKummerbund[$k] : 0;
+            $data['end_kummerbund'] = isset($endKummerbund[$k]) ? $endKummerbund[$k] : 0;
+            $data['start_hipline'] = isset($startHipline[$k]) ? $startHipline[$k] : 0;
+            $data['end_hipline'] = isset($endHipline[$k]) ? $endHipline[$k] : 0;
+            $data['start_outseam'] = isset($startOutseam[$k]) ? $startOutseam[$k] : 0;
+            $data['end_outseam'] = isset($endOutseam[$k]) ? $endOutseam[$k] : 0;
+            $data['start_thigh_girth'] = isset($startThighGirth[$k]) ? $startThighGirth[$k] : 0;
+            $data['end_thigh_girth'] = isset($endThighGirth[$k]) ? $endThighGirth[$k] : 0;
+            $data['start_knee_circumference'] = isset($startKneeCircumference[$k]) ? $startKneeCircumference[$k] : 0;
+            $data['end_knee_circumference'] = isset($endKneeCircumference[$k]) ? $endKneeCircumference[$k] : 0;
+            $data['start_bust'] = isset($startBust[$k]) ? $startBust[$k] : 0;
+            $data['end_bust'] = isset($endBust[$k]) ? $endBust[$k] : 0;
+            $data['start_length'] = isset($startLength[$k]) ? $startLength[$k] : 0;
+            $data['end_length'] = isset($endLength[$k]) ? $endLength[$k] : 0;
+            $data['start_s_width'] = isset($startSWidth[$k]) ? $startSWidth[$k] : 0;
+            $data['end_s_width'] = isset($endSWidth[$k]) ? $endSWidth[$k] : 0;
+            $data['start_sleeve_width'] = isset($startSleeveWidth[$k]) ? $startSleeveWidth[$k] : 0;
+            $data['end_sleeve_width'] = isset($endSleeveWidth[$k]) ? $endSleeveWidth[$k] : 0;
             $data['create_time'] = date('Y-m-d H:i:s');
             $data['update_time'] = date('Y-m-d H:i:s');
             $brandsizeId = $this->size_model->add($data);
@@ -234,11 +255,11 @@ class Brand extends MY_controller {
                 return $this->error('添加失败');
             }
         }
-        return $this->success('修改成功','/brand/brandSizeAdd');
+        return $this->success('修改成功','/brand/brandSizeAdd?brand_id='.$brandId);
     }
     
     public function brandNumSizeAdd() {
-        $brandId = isset($_REQUEST['brand_id']) ? $_REQUEST['brand_id'] : 8;
+        $brandId = isset($_REQUEST['brand_id']) ? $_REQUEST['brand_id'] : 0;
         if($brandId <= 0) {
             return $this->error('品牌ID错误');
         }
@@ -247,51 +268,72 @@ class Brand extends MY_controller {
             $brandSizes = $this->size_model->getSizeByParams(array('brand_id'=>$brandId, 'size_type'=>2));
             $params = array();
             $params['brandSizes'] = $brandSizes;
-            $params['_SESSION'] =$_SESSION;
+            $params['_SESSION'] = $_SESSION;
+            $params['brandId'] = $brandId;
             return $this->display('brand/numsize', $params);
         }
         $height = isset($_POST['height']) ? $_POST['height'] : array();
         $weight = isset($_POST['weight']) ? $_POST['weight'] : array();
         $size = isset($_POST['size']) ? $_POST['size'] : array();
-        $startBust = isset($_POST['start_bust']) ? $_POST['start_bust'] : array();
-        $endBust = isset($_POST['end_bust']) ? $_POST['end_bust'] : array();
-        $startKummerbund = isset($_POST['start_kummerbund']) ? $_POST['start_kummerbund'] : array();
-        $endKummerbund = isset($_POST['end_kummerbund']) ? $_POST['end_kummerbund'] : array();
         $startHeight = isset($_POST['start_height']) ? $_POST['start_height'] : array();
         $endHeight = isset($_POST['end_height']) ? $_POST['end_height'] : array();
         $startWeight = isset($_POST['start_weight']) ? $_POST['start_weight'] : array();
         $endWeight = isset($_POST['end_weight']) ? $_POST['end_weight'] : array();
-        $startSWidth = isset($_POST['start_s_width']) ? $_POST['start_s_width'] : array();
-        $endSWidth = isset($_POST['end_s_width']) ? $_POST['end_s_width'] : array();
+        $startKummerbund = isset($_POST['start_kummerbund']) ? $_POST['start_kummerbund'] : array();
+        $endKummerbund = isset($_POST['end_kummerbund']) ? $_POST['end_kummerbund'] : array();
+        $startHipline= isset($_POST['start_hipline']) ? $_POST['start_hipline'] : array();
+        $endHipline = isset($_POST['end_hipline']) ? $_POST['end_hipline'] : array();
+        $startOutseam= isset($_POST['start_outseam']) ? $_POST['start_outseam'] : array();
+        $endOutseam = isset($_POST['end_outseam']) ? $_POST['end_outseam'] : array();
+        $startThighGirth= isset($_POST['start_thigh_girth']) ? $_POST['start_thigh_girth'] : array();
+        $endThighGirth = isset($_POST['end_thigh_girth']) ? $_POST['end_thigh_girth'] : array();
+        $startKneeCircumference= isset($_POST['start_knee_circumference']) ? $_POST['start_knee_circumference'] : array();
+        $endKneeCircumference = isset($_POST['end_knee_circumference']) ? $_POST['end_knee_circumference'] : array();
+        $startBust = isset($_POST['start_bust']) ? $_POST['start_bust'] : array();
+        $endBust = isset($_POST['end_bust']) ? $_POST['end_bust'] : array();
         $startLength = isset($_POST['start_length']) ? $_POST['start_length'] : array();
         $endLength = isset($_POST['end_length']) ? $_POST['end_length'] : array();
-        $res = $this->size_model->delete(array('brand_id'=>$brandId,'size_type'=>1));
+        $startSWidth = isset($_POST['start_s_width']) ? $_POST['start_s_width'] : array();
+        $endSWidth = isset($_POST['end_s_width']) ? $_POST['end_s_width'] : array();
+        $startSleeveWidth = isset($_POST['start_sleeve_width']) ? $_POST['start_sleeve_width'] : array();
+        $endSleeveWidth = isset($_POST['end_sleeve_width']) ? $_POST['end_sleeve_width'] : array();
+        
+        $res = $this->size_model->delete(array('brand_id'=>$brandId,'size_type'=>2));
         if($res === false) {
             return $this->error('删除品牌对照表失败');
         }
-    
         foreach($height as $k=>$val) {
-            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]='' ) {
+            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]=='' ) {
                 continue;
             }
             $data = array();
             $data['brand_id'] = $brandId;
             $data['size_type'] = isset($_POST['size_type']) ? $_POST['size_type'] : 2;
             $data['height'] = $val;
-            $data['weight'] = $weight[$k];
-            $data['size'] = $size[$k];
-            $data['start_bust'] = $startBust[$k];
-            $data['end_bust'] = $endBust[$k];
-            $data['start_kummerbund'] = $startKummerbund[$k];
-            $data['end_kummerbund'] = $endKummerbund[$k];
-            $data['start_height'] = $startHeight[$k];
-            $data['end_height'] = $endHeight[$k];
-            $data['start_weight'] = $startWeight[$k];
-            $data['end_weight'] = $endWeight[$k];
-            $data['start_s_width'] = $startSWidth[$k];
-            $data['end_s_width'] = $endSWidth[$k];
-            $data['start_length'] = $startLength[$k];
-            $data['end_length'] = $endLength[$k];
+            $data['weight'] = isset($weight[$k]) ? $weight[$k] : 0;
+            $data['size'] = isset($size[$k]) ? $size[$k] : 0;$size[$k];
+            $data['start_height'] = isset($startHeight[$k]) ? $startHeight[$k] : 0;
+            $data['end_height'] = isset($endHeight[$k]) ? $endHeight[$k] : 0;
+            $data['start_weight'] = isset($startWeight[$k]) ? $startWeight[$k] : 0;
+            $data['end_weight'] = isset($endWeight[$k]) ? $endWeight[$k] : 0;
+            $data['start_kummerbund'] = isset($startKummerbund[$k]) ? $startKummerbund[$k] : 0;
+            $data['end_kummerbund'] = isset($endKummerbund[$k]) ? $endKummerbund[$k] : 0;
+            $data['start_hipline'] = isset($startHipline[$k]) ? $startHipline[$k] : 0;
+            $data['end_hipline'] = isset($endHipline[$k]) ? $endHipline[$k] : 0;
+            $data['start_outseam'] = isset($startOutseam[$k]) ? $startOutseam[$k] : 0;
+            $data['end_outseam'] = isset($endOutseam[$k]) ? $endOutseam[$k] : 0;
+            $data['start_thigh_girth'] = isset($startThighGirth[$k]) ? $startThighGirth[$k] : 0;
+            $data['end_thigh_girth'] = isset($endThighGirth[$k]) ? $endThighGirth[$k] : 0;
+            $data['start_knee_circumference'] = isset($startKneeCircumference[$k]) ? $startKneeCircumference[$k] : 0;
+            $data['end_knee_circumference'] = isset($endKneeCircumference[$k]) ? $endKneeCircumference[$k] : 0;
+            $data['start_bust'] = isset($startBust[$k]) ? $startBust[$k] : 0;
+            $data['end_bust'] = isset($endBust[$k]) ? $endBust[$k] : 0;
+            $data['start_length'] = isset($startLength[$k]) ? $startLength[$k] : 0;
+            $data['end_length'] = isset($endLength[$k]) ? $endLength[$k] : 0;
+            $data['start_s_width'] = isset($startSWidth[$k]) ? $startSWidth[$k] : 0;
+            $data['end_s_width'] = isset($endSWidth[$k]) ? $endSWidth[$k] : 0;
+            $data['start_sleeve_width'] = isset($startSleeveWidth[$k]) ? $startSleeveWidth[$k] : 0;
+            $data['end_sleeve_width'] = isset($endSleeveWidth[$k]) ? $endSleeveWidth[$k] : 0;
             $data['create_time'] = date('Y-m-d H:i:s');
             $data['update_time'] = date('Y-m-d H:i:s');
             $brandsizeId = $this->size_model->add($data);
@@ -299,7 +341,7 @@ class Brand extends MY_controller {
                 return $this->error('添加失败');
             }
         }
-        return $this->success('修改成功','/brand/brandNumSizeAdd');
+        return $this->success('修改成功','/brand/brandNumSizeAdd?brand_id='.$brandId);
     }
     
     

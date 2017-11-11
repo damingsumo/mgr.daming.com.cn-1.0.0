@@ -1004,7 +1004,7 @@ textarea{
 	display: inline-block;
 	font-size: 11px;
 }
-.increase,.increase1{
+.increase,.increase1,.increase3 {
 	 float: left;
 	text-align: center;
 	height: 80px;
@@ -1013,7 +1013,7 @@ textarea{
 	margin-left: 25px;
 }
 
-.increase img,.increase1 img{
+.increase img,.increase1 img,.increase3 img{
 	height: 80px;
 	width:80px;
 	display: block;

@@ -6,13 +6,14 @@ class User extends MY_controller {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('user/figure_model');
+        $this->load->model('user/hw_model');
         $this->load->library('pager');
         $this->checkLogin();
     }
     
     public function userList() {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 1;
+        $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 20;
         $value = isset($_GET['value']) ? trim($_GET['value']) : '';
         $params = array();
         if($value != '') {
@@ -43,6 +44,7 @@ class User extends MY_controller {
         }
         $user = $this->user_model->row('*',$uid);
         $user['figure'] = current($this->figure_model->getFiguresByParams(array('uid'=>$user['uid'])));
+        $user['hw'] = current($this->hw_model->getHwsByParams(array('uid'=>$user['uid'])));
         $params = array();
         $params['user'] = $user;
         $params['_SESSION'] =$_SESSION;

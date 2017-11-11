@@ -3,6 +3,8 @@
 <div class="detial">
 				<ul class="top">
 					<li> 品牌详情</li>
+					<a href="/brand/brandSizeAdd?brand_id={$brand.brand_id}"><li> 上装品牌对照表</li></a>
+					<a href="/brand/brandNumSizeAdd?brand_id={$brand.brand_id}"><li> 下装品牌对照表</li></a>
 				</ul>
 				<div class="content">
 		    		<ul>

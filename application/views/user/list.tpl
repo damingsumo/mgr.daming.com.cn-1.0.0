@@ -33,7 +33,7 @@
 				 				 {$user.uid}
 				 			</td>
 				 			<td>
-				 				 <a href="/user/detail?uid={$user.uid}">{$user.user_name}</a>
+				 				 <a href="/user/detail?uid={$user.uid}">{$user.username}</a>
 				 			</td>
 				 			<td>
 				 				 {$user.name}
