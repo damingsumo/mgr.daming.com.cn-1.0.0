@@ -3,16 +3,16 @@
 			<div class="goods">
 		    <div class="top_header">
 			      <ul class="top">
-					<li> 品牌详情</li>
-					<a href="/brand/brandSizeAdd"><li> 上装品牌对照表</li></a>
-					<a href="/brand/brandNumSizeAdd"><li> 下装品牌对照表</li></a>
+					<li style="line-height:34px;"> 品牌详情</li>
+					<a href="/brand/brandSizeAdd"><li style="line-height:34px;"> 上装品牌对照表</li></a>
+					<a href="/brand/brandNumSizeAdd"><li style="line-height:34px;"> 下装品牌对照表</li></a>
 				</ul>
 	        </div>
 		     <form id="brandForm" action="/brand/brandsizeadd" method="post"  onsubmit="return check()">
 		     <input type="hidden" name="brand_id" value="{$brandId}">
 		     	<div class="size_form"> 
+		     		{foreach $brandSizes as $k=>$brandSize}
 		     		<div class="size_form_list">
-		     			 {foreach $brandSizes as $k=>$brandSize}
 		     			 <ul class="size_form_list1">
 			     		 	<li>
 			     		 		<label>身高/体重</label> 
@@ -122,11 +122,10 @@
 			     		 		<label>上装尺码：</label>
 			     		 		<select name="size[]">
 			     		 			<option {if $brandSize['size']==0} selected {/if} value="0">请选择</option>
-			     		 			<option {if $brandSize['size']==1} selected {/if} value="1">XS</option>
-			     		 			<option {if $brandSize['size']==2} selected {/if} value="2">S</option>
-			     		 			<option {if $brandSize['size']==3} selected {/if} value="3">M</option>
-			     		 			<option {if $brandSize['size']==4} selected {/if} value="4">L</option>
-			     		 			<option {if $brandSize['size']==5} selected {/if} value="5">XL</option>
+			     		 			<option {if $brandSize['size']==1} selected {/if} value="1">S</option>
+			     		 			<option {if $brandSize['size']==2} selected {/if} value="2">M</option>
+			     		 			<option {if $brandSize['size']==3} selected {/if} value="3">L</option>
+			     		 			<option {if $brandSize['size']==4} selected {/if} value="4">XL</option>
 			     		 		</select>
 			     		 	</li>
 			     		 	<li>

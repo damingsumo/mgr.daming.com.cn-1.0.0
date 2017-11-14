@@ -3,9 +3,9 @@
 			<div class="goods">
 		    <div class="top_header">
 			      <ul class="top">
-					<li> 品牌详情</li>
-					<a href="/brand/brandSizeAdd?brand_id={$brandId}"><li> 上装品牌对照表</li></a>
-					<a href="/brand/brandNumSizeAdd?brand_id={$brandId}"><li> 下装品牌对照表</li></a>
+					<li style="line-height:34px;"> 品牌详情</li>
+					<a href="/brand/brandSizeAdd?brand_id={$brandId}"><li style="line-height:34px;"> 上装品牌对照表</li></a>
+					<a href="/brand/brandNumSizeAdd?brand_id={$brandId}"><li style="line-height:34px;"> 下装品牌对照表</li></a>
 				</ul>
 	        </div>
 		     <form id="brandForm" action="/brand/brandNumSizeAdd" method="post"  onsubmit="return check()" enctype="multipart/form-data">
