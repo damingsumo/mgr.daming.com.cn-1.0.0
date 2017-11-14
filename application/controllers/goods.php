@@ -406,7 +406,6 @@ class Goods extends MY_controller {
             $params['_SESSION'] =$_SESSION;
             return $this->display('brand/goods/modelsize', $params);
         }
-        print_r($_POST);exit;
         $height = isset($_POST['height']) ? $_POST['height'] : array();
         $weight = isset($_POST['weight']) ? $_POST['weight'] : array();
         $thighGirth = isset($_POST['thigh_girth']) ? $_POST['thigh_girth'] : array();
@@ -425,11 +424,11 @@ class Goods extends MY_controller {
             return $this->error('删除模特数据失败');
         }
         foreach($height as $k=>$val) {
-            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]='' ) {
+            if($val == '' || $val <= 0 || $weight[$k] <= 0 || $weight[$k]=='' ) {
                 continue;
             }
             $data = array();
-            $data['gid'] = $gid[$k];
+            $data['gid'] = $gid;
             $data['height'] = $height[$k];
             $data['weight'] = $weight[$k];
             $data['thigh_girth'] = $thighGirth[$k];

@@ -17,7 +17,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | environments.
 |
 */
-$config['base_url'] = 'test.mgr.daming.com.cn';
+$config['base_url'] = 'test.mgr.bestdaming.com.cn';
 
 /*
 |--------------------------------------------------------------------------
