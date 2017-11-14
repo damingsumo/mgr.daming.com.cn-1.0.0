@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.31, created on 2017-11-02 10:23:31
+/* Smarty version 3.1.31, created on 2017-11-14 11:03:13
   from "H:\daima\mgr.daming.com.cn-1.0.0\application\views\brand\goods\detail.tpl" */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.31',
-  'unifunc' => 'content_59fa81a345bf04_12919370',
+  'unifunc' => 'content_5a0a5cf1402d10_64835993',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '3189191c56c685b83e79dfe9372809ca76e96e28' => 
     array (
       0 => 'H:\\daima\\mgr.daming.com.cn-1.0.0\\application\\views\\brand\\goods\\detail.tpl',
-      1 => 1509585907,
+      1 => 1510628427,
       2 => 'file',
     ),
   ),
@@ -22,7 +22,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/menu.tpl' => 1,
   ),
 ),false)) {
-function content_59fa81a345bf04_12919370 (Smarty_Internal_Template $_smarty_tpl) {
+function content_5a0a5cf1402d10_64835993 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array('pageTitle'=>'商品'), 0, false);
 ?>
 
@@ -31,6 +31,7 @@ $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id,
  	
 		    <div class="top_header">
 			     <span>商品信息</span>
+			     <a href="/goods/goodsModelAdd"><span style="margin-left:0;padding-left:7px;">模特身材数据</span></a>
 	        </div>
 		     <form>
 		        <div class="news ">
@@ -72,7 +73,7 @@ $_smarty_tpl->_subTemplateRender("file:common/head.tpl", $_smarty_tpl->cache_id,
 					    <span>商品图片：</span>
 						
 						<div class="increase">
-							<img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value['picture_url'];?>
+							<img src="<?php echo $_smarty_tpl->tpl_vars['goods']->value['show_url'];?>
 ">
 						</div>
 						 
