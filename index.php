@@ -53,7 +53,7 @@
  * NOTE: If you change these, also change the error_reporting() code below
  */
 	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-	echo $_SERVER;
+
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -222,7 +222,7 @@ switch (ENVIRONMENT)
 
 	// Path to the system folder
 	define('BASEPATH', str_replace('\\', '/', $system_path));
-
+	echo BASEPATH;
 	// Path to the front controller (this file)
 	define('FCPATH', dirname(__FILE__).'/');
 
