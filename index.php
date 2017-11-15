@@ -35,7 +35,7 @@
  * @since	Version 1.0.0
  * @filesource
  */
-
+echo $_SERVER['PATH_INFO'];
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
