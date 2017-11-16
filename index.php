@@ -52,8 +52,8 @@
  *
  * NOTE: If you change these, also change the error_reporting() code below
  */
-	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'development');
-
+	define('ENVIRONMENT', isset($_SERVER['CI_ENV']) ? $_SERVER['CI_ENV'] : 'testing');
+print_r($_SERVER);
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING
@@ -112,7 +112,7 @@ switch (ENVIRONMENT)
  *
  * NO TRAILING SLASH!
  */
-	$application_folder = 'application/1';
+	$application_folder = 'application';
 
 /*
  *---------------------------------------------------------------
@@ -249,7 +249,6 @@ switch (ENVIRONMENT)
 
 		define('APPPATH', BASEPATH.$application_folder.DIRECTORY_SEPARATOR);
 	}
-
 	// The path to the "views" folder
 	if ( ! is_dir($view_folder))
 	{
@@ -268,7 +267,6 @@ switch (ENVIRONMENT)
 			$view_folder = APPPATH.'views';
 		}
 	}
-
 	if (($_temp = realpath($view_folder)) !== FALSE)
 	{
 		$view_folder = $_temp.DIRECTORY_SEPARATOR;
@@ -277,7 +275,6 @@ switch (ENVIRONMENT)
 	{
 		$view_folder = rtrim($view_folder, '/\\').DIRECTORY_SEPARATOR;
 	}
-
 	define('VIEWPATH', $view_folder);
 /*
  * --------------------------------------------------------------------
