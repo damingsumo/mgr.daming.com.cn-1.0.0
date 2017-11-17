@@ -391,9 +391,9 @@ if ( ! is_php('5.4'))
  *  or the loader class can be called via the URI, nor can
  *  controller methods that begin with an underscore.
  */
+	print_r(1);exit;
 	$e404 = FALSE;
 	$class = ucfirst($RTR->class);
-	print_r($class);exit;
 	$method = $RTR->method;
 	if (empty($class) OR ! file_exists(APPPATH.'controllers/'.$RTR->directory.$class.'.php'))
 	{
