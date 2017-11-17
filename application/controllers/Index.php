@@ -44,6 +44,6 @@ class Index extends MY_controller {
     
     
     public function index() {
-        return $this->display('index');
+        return $this->display('Index');
     }
 }
