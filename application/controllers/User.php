@@ -6,7 +6,7 @@ class User extends MY_controller {
         parent::__construct();
         $this->load->model('user_model');
         $this->load->model('user/figure_model');
-        $this->load->model('user/Hw_model');
+        $this->load->model('user/hw_model');
         $this->load->library('pager');
         $this->checkLogin();
     }
