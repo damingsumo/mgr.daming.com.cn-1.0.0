@@ -10,6 +10,7 @@ class MY_controller extends CI_Controller {
  	}
  
  	public function display($html,$arr = array()) {
+ 	    print_r(1);exit;
  		foreach($arr as $key=>$val) {
  			$this->ci_smarty->assign($key,$val);
  		}
