@@ -303,7 +303,7 @@ if ( ! is_php('5.4'))
  *  Instantiate the routing class and set the routing
  * ------------------------------------------------------
  */
-	$RTR =& load_class('Router', 'core', isset($routing) ? $routing : NULL);
+	$RTR =& load_class('Router', 'core', isset($routing) ? $routing : index);
 
 /*
  * ------------------------------------------------------
