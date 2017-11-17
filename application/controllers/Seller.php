@@ -28,15 +28,15 @@ class Seller extends MY_controller {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 20;
         $value = isset($_GET['value']) ? trim($_GET['value']) : '';
-        print_r(1);EXIT;
+        print_r(1);exit;
         $params = array();
         if($value != '') {
             $params['value'] = $value;
         }
-        $total = $this->seller_model->getSellerCountByParams($params);
+        $total = $this->Seller_model->getSellerCountByParams($params);
         $sellers = array();
         if($total > 0 ) {
-            $sellers = $this->seller_model->getSellerByParams($params, $page, $pageSize);
+            $sellers = $this->Seller_model->getSellerByParams($params, $page, $pageSize);
         }
         $params['pager'] = new pager($total, $page,$pageSize);
         $params['total'] =$total;
@@ -61,7 +61,7 @@ class Seller extends MY_controller {
             return $this->error('请输入手机号');
         }
         $seller = array();
-        $seller = $this->seller_model->getSellerByParams(array('seller_name'=>$sellerName));
+        $seller = $this->Seller_model->getSellerByParams(array('seller_name'=>$sellerName));
         if(!empty($seller)) {
             return $this->error('该商家已存在');
         }
@@ -75,7 +75,7 @@ class Seller extends MY_controller {
         $params['note'] = isset($_POST['note']) ? $_POST['note'] : '';
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');
-        $sellerId = $this->seller_model->add($params);
+        $sellerId = $this->Seller_model->add($params);
         if($sellerId === false) {
             return $this->error('添加失败');
         } 
@@ -91,7 +91,7 @@ class Seller extends MY_controller {
         if($sellerId == 0 ) {
             return $this->error('商家ID错误');
         }
-        $seller = $this->seller_model->getSellerByParams(array('sid'=>$sellerId));
+        $seller = $this->Seller_model->getSellerByParams(array('sid'=>$sellerId));
         if(empty($seller)) {
             return $this->error('未找到该商家信息');
         }
@@ -111,7 +111,7 @@ class Seller extends MY_controller {
             if($sellerId == 0 ) {
                 return $this->error('商家ID错误');
             }
-            $seller = $this->seller_model->row('*',$sellerId);
+            $seller = $this->Seller_model->row('*',$sellerId);
             if(empty($seller)) {
                 return $this->error('未找到商家信息');
             }
@@ -129,7 +129,7 @@ class Seller extends MY_controller {
             return $this->error('请输入商家名称');
         }
         
-        $seller = $this->seller_model->getSellerByParams(array('seller_name'=>$sellerName));
+        $seller = $this->Seller_model->getSellerByParams(array('seller_name'=>$sellerName));
         if($seller['sid'] != $sellerId) {
             return $this->error('该商户名字已存在');
         }
@@ -142,7 +142,7 @@ class Seller extends MY_controller {
         $params['brand'] = isset($_POST['brand']) ? $_POST['brand'] : '';
         $params['region'] = isset($_POST['region']) ? $_POST['region'] : 2;
         $params['update_time'] = date('Y-m-d H:i:s');
-        $res = $this->seller_model->edit($params, $sellerId);
+        $res = $this->Seller_model->edit($params, $sellerId);
         if($res === false) {
             return $this->error('修改失败');
         }
@@ -161,7 +161,7 @@ class Seller extends MY_controller {
         $params = array();
         $params['sid'] = $sellerId;
         $params['password'] = md5('123456');
-        $res = $this->seller_model->edit($params, $sellerId);
+        $res = $this->Seller_model->edit($params, $sellerId);
         if($res === false) {
             return $this->error('重置密码失败');
         }
