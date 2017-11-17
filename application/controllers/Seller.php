@@ -28,7 +28,6 @@ class Seller extends MY_controller {
         $page = isset($_GET['page']) ? $_GET['page'] : 1;
         $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 20;
         $value = isset($_GET['value']) ? trim($_GET['value']) : '';
-        print_r(1);exit;
         $params = array();
         if($value != '') {
             $params['value'] = $value;
