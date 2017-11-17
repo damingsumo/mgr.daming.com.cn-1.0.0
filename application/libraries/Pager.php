@@ -10,8 +10,8 @@
  * pager class
  *
  */
-require_once 'http.php';
-class pager{
+require_once 'Http.php';
+class Pager{
 	
 	private $MAXTOTAL	= 10000;
 	

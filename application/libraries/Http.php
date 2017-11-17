@@ -4,7 +4,7 @@
  * @author liu
  * 
  */
-class http {
+class Http {
 	//是否为ajax
 	public static function isAjax() {
 		if (isset ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) && strtolower ( $_SERVER ['HTTP_X_REQUESTED_WITH'] ) === 'xmlhttprequest') {

@@ -5,7 +5,7 @@
  * @author      Tiger
  * @version     $ $
  */
-class db {
+class Db {
 	
 	public static $conn = null;
 	public static $connArray = array ();
