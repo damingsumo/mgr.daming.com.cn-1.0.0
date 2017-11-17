@@ -5,7 +5,7 @@ class Seller extends MY_controller {
     public function __construct() {
         parent::__construct();
         $this->load->model('seller_model');
-        $this->load->library('pager');
+        $this->load->library('Pager');
         $this->checkLogin();
     }
     
