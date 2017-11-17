@@ -84,11 +84,10 @@ $db['default'] = array(
 //     'failover' => array(),
 //     'save_queries' => TRUE
     
-    
-    'dsn' => '',
-    'hostname' => 'mysql:dbname=test_dress;host=localhost',
+   'dsn' => '',
+    'hostname' => 'mysql:dbname=test_dress;host=116.62.113.142',
     'username' => 'root',
-    'password' => '',
+    'password' => 'root',
     'database' => 'test_dress',
     'dbdriver' => 'pdo',
     'dbprefix' => '',
@@ -104,6 +103,27 @@ $db['default'] = array(
     'stricton' => FALSE,
     'failover' => array(),
     'save_queries' => TRUE
+    
+    
+//     'dsn' => '',
+//     'hostname' => 'mysql:dbname=test_dress;host=localhost',
+//     'username' => 'root',
+//     'password' => '',
+//     'database' => 'test_dress',
+//     'dbdriver' => 'pdo',
+//     'dbprefix' => '',
+//     'pconnect' => FALSE,
+//     'db_debug' => (ENVIRONMENT !== 'production'),
+//     'cache_on' => FALSE,
+//     'cachedir' => '',
+//     'char_set' => 'utf8',
+//     'dbcollat' => 'utf8_general_ci',
+//     'swap_pre' => '',
+//     'encrypt' => FALSE,
+//     'compress' => FALSE,
+//     'stricton' => FALSE,
+//     'failover' => array(),
+//     'save_queries' => TRUE
 );
 // $db['default'] = array(
 // 	'dsn'	=> '',
