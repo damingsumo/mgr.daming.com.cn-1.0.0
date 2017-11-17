@@ -69,7 +69,7 @@ class CI_Router {
 	 *
 	 * @var	string
 	 */
-	public $class =		'index';
+	public $class =		'';
 
 	/**
 	 * Current method name
