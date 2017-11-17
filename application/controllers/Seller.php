@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Seller extends MY_controller {
     public function __construct() {
         parent::__construct();
-        $this->load->model('seller_model');
+        $this->load->model('Seller_model');
         $this->load->library('Pager');
         $this->checkLogin();
     }
