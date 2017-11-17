@@ -25,26 +25,27 @@ class Seller extends MY_controller {
      * 
      */
     public function sellerList() {
-        $page = isset($_GET['page']) ? $_GET['page'] : 1;
-        $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 20;
-        $value = isset($_GET['value']) ? trim($_GET['value']) : '';
         print_r(1);exit;
-        $params = array();
-        if($value != '') {
-            $params['value'] = $value;
-        }
-        $total = $this->Seller_model->getSellerCountByParams($params);
-        $sellers = array();
-        if($total > 0 ) {
-            $sellers = $this->Seller_model->getSellerByParams($params, $page, $pageSize);
-        }
-        $params['pager'] = new pager($total, $page,$pageSize);
-        $params['total'] =$total;
-        $params['sellers'] =$sellers;
-        $params['page'] =$page;
-        $params['pageSize'] =$pageSize;
-        $params['_SESSION'] =$_SESSION;
-        return $this->display('seller/list',$params);
+//         $page = isset($_GET['page']) ? $_GET['page'] : 1;
+//         $pageSize = isset($_GET['pageSize']) ? $_GET['pageSize'] : 20;
+//         $value = isset($_GET['value']) ? trim($_GET['value']) : '';
+//         print_r(1);exit;
+//         $params = array();
+//         if($value != '') {
+//             $params['value'] = $value;
+//         }
+//         $total = $this->Seller_model->getSellerCountByParams($params);
+//         $sellers = array();
+//         if($total > 0 ) {
+//             $sellers = $this->Seller_model->getSellerByParams($params, $page, $pageSize);
+//         }
+//         $params['pager'] = new pager($total, $page,$pageSize);
+//         $params['total'] =$total;
+//         $params['sellers'] =$sellers;
+//         $params['page'] =$page;
+//         $params['pageSize'] =$pageSize;
+//         $params['_SESSION'] =$_SESSION;
+//         return $this->display('seller/list',$params);
     }
     
     /***
