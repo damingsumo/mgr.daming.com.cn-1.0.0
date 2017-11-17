@@ -44,7 +44,7 @@ class Index extends MY_controller {
     
     
     public function index() {
-        return $this->display('index/index');
+        return $this->ci_smarty->display('index/index'.'.tpl');
 //         $this->load->view('index/index.tpl');
     }
 }
