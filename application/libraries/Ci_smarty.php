@@ -11,8 +11,11 @@ class Ci_smarty extends Smarty {
   $this->cache_lifetime =$this->ci->config->item('cache_lifetime');
   $this->caching = $this->ci->config->item('caching');
   $this->config_dir = $this->ci->config->item('config_dir');
-  $this->template_dir = $this->ci->config->item('template_dir');
-  $this->compile_dir = $this->ci->config->item('compile_dir');
+//   $this->template_dir = $this->ci->config->item('template_dir');
+//   $this->compile_dir = $this->ci->config->item('compile_dir');
+
+  $this->template_dir = APPPATH.'views';
+  $this->compile_dir = APPPATH.'templates_c/';
   $this->cache_dir = $this->ci->config->item('cache_dir');
   $this->use_sub_dirs = $this->ci->config->item('use_sub_dirs');
   $this->left_delimiter = $this->ci->config->item('left_delimiter');
