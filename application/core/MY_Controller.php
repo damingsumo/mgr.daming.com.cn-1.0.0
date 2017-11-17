@@ -13,7 +13,7 @@ class MY_controller extends CI_Controller {
  		foreach($arr as $key=>$val) {
  			$this->ci_smarty->assign($key,$val);
  		}
-  		$this->ci_smarty->display($html.'.tpl');
+  		$this->ci_smarty->display($html.'.html');
  	}
  	
     /**
