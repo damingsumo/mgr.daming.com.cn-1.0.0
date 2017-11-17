@@ -303,7 +303,7 @@ if ( ! is_php('5.4'))
  *  Instantiate the routing class and set the routing
  * ------------------------------------------------------
  */
-	$RTR =& load_class('Router', 'core', isset($routing) ? $routing : index);
+	$RTR =& load_class('Router', 'core', isset($routing) ? $routing : NULL);
 
 /*
  * ------------------------------------------------------
@@ -393,7 +393,7 @@ if ( ! is_php('5.4'))
  */
 	$e404 = FALSE;
 	$class = ucfirst($RTR->class);
-	print_r($class);exit;
+	print_r($RTR);exit;
 	$method = $RTR->method;
 	if (empty($class) OR ! file_exists(APPPATH.'controllers/'.$RTR->directory.$class.'.php'))
 	{
