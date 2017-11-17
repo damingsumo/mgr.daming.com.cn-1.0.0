@@ -4,8 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Index extends MY_controller {
     public function __construct() {
         parent::__construct();
-//         $this->load->library("session");
-//         $this->load->model('Admin_model');
+        $this->load->library("session");
+        $this->load->model('Admin_model');
     }
     /***
      * 登录
