@@ -64,8 +64,8 @@ class Shoes extends MY_controller {
         $params['category'] = $category;
         $params['color'] = $color;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/shoes/'.$datap['file_name'];
-        $params['compose_url'] = '/imgs/shoes/'.$datac['file_name'];
+        $params['picture_url'] = MGR.'/imgs/shoes/'.$datap['file_name'];
+        $params['compose_url'] = MGR.'/imgs/shoes/'.$datac['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');
         $shoesId = $this->shoes_model->add($params);
@@ -126,8 +126,8 @@ class Shoes extends MY_controller {
         $params['category'] = $category;
         $params['color'] = $color;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/shoes/'.$datap['file_name'];
-        $params['compose_url'] = '/imgs/shoes/'.$datac['file_name'];
+        $params['picture_url'] = MGR.'/imgs/shoes/'.$datap['file_name'];
+        $params['compose_url'] = MGR.'/imgs/shoes/'.$datac['file_name'];
         $params['update_time'] = date('Y-m-d H:i:s');
         $shoesId = $this->shoes_model->edit($params, $shoesId);
         if($shoesId === false) {

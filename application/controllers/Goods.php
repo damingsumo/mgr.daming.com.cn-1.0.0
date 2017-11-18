@@ -155,7 +155,7 @@ class Goods extends MY_controller {
         $params['reduce_money'] = $oldPrice*100 - $oldPrice*100;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
         $params['sales'] = isset($_POST['sales']) ? $_POST['sales'] : 0;
-        $params['show_url'] = '/imgs/brand/goods/'.$datac['file_name'];;
+        $params['show_url'] = MGR.'/imgs/brand/goods/'.$datac['file_name'];;
         $params['picture_source'] = isset($_POST['picture_source']) ? $_POST['picture_source'] : '';
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');

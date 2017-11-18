@@ -59,7 +59,7 @@ class Hair extends MY_controller {
         $params = array();
         $params['name'] = $name;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/hairstyle/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/hairstyle/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['updatetime'] = date('Y-m-d H:i:s');
         $res = $this->hairstyle_model->add($params);
@@ -120,7 +120,7 @@ public function goColorAdd() {
         $params = array();
         $params['name'] = $name;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/haircolor/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/haircolor/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['updatetime'] = date('Y-m-d H:i:s');
         $res = $this->haircolor_model->add($params);
@@ -177,7 +177,7 @@ public function goColorAdd() {
         $params = array();
         $params['name'] = $name;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/face/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/face/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['updatetime'] = date('Y-m-d H:i:s');
         $res = $this->face_model->add($params);
@@ -235,7 +235,7 @@ public function goColorAdd() {
         $params = array();
         $params['name'] = $name;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/complexion/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/complexion/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['updatetime'] = date('Y-m-d H:i:s');
         $res = $this->complexion_model->add($params);

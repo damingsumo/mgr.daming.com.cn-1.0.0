@@ -64,7 +64,7 @@ class Brand extends MY_controller {
         $params['region'] = $region;
         $params['note'] = isset($_POST['note']) ? $_POST['note'] : '';
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = 'http://dev.mgr.daming.com.cn/imgs/brand/'.$data['file_name'];
+        $params['picture_url'] = MGR.$data['file_name'];
         $params['path'] = $data['full_path'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');
@@ -100,7 +100,7 @@ class Brand extends MY_controller {
         }
         $params['region'] = isset($_POST['region']) ? $_POST['region'] : 2;
         $params['note'] = isset($_POST['note']) ? $_POST['note'] : '';
-        $params['picture_url'] = '/imgs/brand/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/brand/'.$data['file_name'];
         $params['path'] = $data['full_path'];
         $params['update_time'] = date('Y-m-d H:i:s');
         $res = $this->brand_model->edit($params, $brandId);

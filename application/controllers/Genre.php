@@ -64,7 +64,7 @@ class Genre extends MY_controller {
         $params['name'] = $name;
         $params['category'] = $category;
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
-        $params['picture_url'] = '/imgs/genre/'.$data['file_name'];
+        $params['picture_url'] = MGR.'/imgs/genre/'.$data['file_name'];
         $params['create_time'] = date('Y-m-d H:i:s');
         $params['update_time'] = date('Y-m-d H:i:s');
         $shoesId = $this->genre_model->add($params);
