@@ -42,7 +42,7 @@ class Collocation extends MY_controller {
         $params['status'] = isset($_POST['status']) ? $_POST['status'] : 1;
         $params['first_collocation_id'] = isset($_POST['first_collocation_id']) ? $_POST['first_collocation_id'] : 0;
         $params['second_collocation_id'] = isset($_POST['second_collocation_id']) ? $_POST['second_collocation_id'] : 0;
-        $params['synthesis_url'] = 'http://dev.mgr.daming.com.cn/imgs/collocation/'.$data['file_name'];
+        $params['synthesis_url'] = MGR.'/imgs/collocation/'.$data['file_name'];
         $params['ordinate'] = isset($_POST['ordinate']) ? $_POST['ordinate'] : 0;
         $params['abscissa'] = isset($_POST['abscissa']) ? $_POST['abscissa'] : 0;
         $params['length'] = isset($_POST['length']) ? $_POST['length'] : 0;

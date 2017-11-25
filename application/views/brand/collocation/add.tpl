@@ -5,7 +5,8 @@
 	        </div>
 			<div class="detial detial1">
 				 
-				<form id="brandForm" action="" method="post"  onsubmit="return check()" enctype="multipart/form-data"> 
+				<form id="brandForm" action="/collocation/add" method="post"  onsubmit="return check()" enctype="multipart/form-data"> 
+				<input type="hidden" name="gid" value="{$gid}">
 				  <div class="match">
 				  	<ul> 
 				  	   <li>
